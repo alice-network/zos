@@ -30,7 +30,7 @@ export default interface ZosContract {
 
   // ZosContract specific.
   address: string;
-  new: (args: any[], options: any) => Promise<ZosContract>;
+  new: (args?: any[], options?: {}) => Promise<ZosContract>;
   at: (address: string) => ZosContract;
   link: (libraries: { [libAlias: string]: string }) => void;
   deployment?: { transactionHash: string, transactionReceipt: TransactionReceipt };
@@ -63,11 +63,12 @@ export default interface ZosContract {
 function _wrapContractInstance(schema: any, instance: Contract): ZosContract {
   instance.schema = schema;
 
-  instance.new = async function(args: any[] = [], options: any = {}): Promise<ZosContract> {
+  instance.new = async function(...passedArguments): Promise<ZosContract> {
+    const [args, options] = parseArguments(passedArguments);
     if(!schema.linkedBytecode) throw new Error(`${schema.contractName} bytecode contains unlinked libraries.`);
     instance.options = { ...instance.options, ...(await Contracts.getDefaultTxParams()) };
     return new Promise((resolve, reject) => {
-      const tx = instance.deploy({data: schema.linkedBytecode, arguments: args});
+      const tx = instance.deploy({ data: schema.linkedBytecode, arguments: args });
       let transactionReceipt, transactionHash;
       tx.send({ ...options })
         .on('error', (error) => reject(error))
@@ -108,4 +109,14 @@ function _wrapContractInstance(schema: any, instance: Contract): ZosContract {
 export function createZosContract(schema: any): ZosContract {
   const contract = ZWeb3.contract(schema.abi, null, Contracts.getArtifactsDefaults());
   return _wrapContractInstance(schema, contract);
+}
+
+function parseArguments(passedArguments) {
+  let givenOptions = {};
+  if (passedArguments.length > 0) {
+    const lastArg = passedArguments[passedArguments.length - 1];
+    if (typeof(lastArg) === 'object' && !Array.isArray(lastArg) && !BN.isBigNumber(lastArg)) givenOptions = passedArguments.pop();
+  }
+
+  return [passedArguments, givenOptions];
 }

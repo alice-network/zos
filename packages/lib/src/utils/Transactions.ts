@@ -219,11 +219,11 @@ export default {
     // If gas is set explicitly, use it
     const defaultGas = Contracts.getArtifactsDefaults().gas;
     if (!txParams.gas && defaultGas) txParams.gas = defaultGas;
-    if (txParams.gas) return contract.new(args, txParams);
+    if (txParams.gas) return contract.new(...args, txParams);
 
     const data = buildDeploymentCallData(contract, args, txParams);
     const gas = await this.estimateActualGas({ data, ...txParams });
-    return contract.new(args, { gas, ...txParams });
+    return contract.new(...args, { gas, ...txParams });
   },
 
   async _getETHGasStationPrice(): Promise<any | never> {
