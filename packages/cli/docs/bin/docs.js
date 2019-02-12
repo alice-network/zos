@@ -1,13 +1,13 @@
 #! /usr/bin/env node
 
-import React from 'react';
-import program from '../../src/bin/program';
-import { renderToStaticMarkup } from 'react-dom/server';
-import { writeFileSync, existsSync, mkdirSync } from 'fs';
-import Main from '../components/Main';
-import Command from '../components/Command';
-import path from 'path';
-import process from 'process';
+const React = require('react');
+const program = require('../../lib/bin/program');
+const { renderToStaticMarkup } = require('react-dom/server');
+const { writeFileSync, existsSync, mkdirSync } = require('fs');
+const Main = require('../components/Main');
+const Command = require('../components/Command');
+const path = require('path');
+const process = require('process');
 
 const outputPath = 'docs/build';
 
