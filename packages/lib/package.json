@@ -4,6 +4,9 @@
   "description": "JavaScript library for the ZeppelinOS smart contract platform",
   "main": "./lib/index.js",
   "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
   "license": "MIT",
   "scripts": {
     "test": "./scripts/test.sh",

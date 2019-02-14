@@ -4,6 +4,9 @@
   "description": "Command-line interface for the ZeppelinOS smart contract platform",
   "main": "./lib/index.js",
   "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
   "license": "MIT",
   "scripts": {
     "copy-files": "./scripts/copy-files.sh",
