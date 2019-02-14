@@ -1,6 +1,7 @@
 ---
-id: erc20_onboarding
+id: version-2.1.0-erc20_onboarding
 title: Onboarding ERC20 tokens
+original_id: erc20_onboarding
 ---
 
 ## Intro

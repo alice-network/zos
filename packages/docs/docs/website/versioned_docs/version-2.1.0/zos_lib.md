@@ -1,6 +1,7 @@
 ---
-id: zos_lib
+id: version-2.1.0-zos_lib
 title: Using the ZeppelinOS programmatic library
+original_id: zos_lib
 ---
 
 ZeppelinOS has a JavaScript library. It is mainly used by the `zos`
