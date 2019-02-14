@@ -1,4 +1,4 @@
-import { Logger } from 'zos-lib';
+import { Logger } from '@alice-network/zos-lib';
 
 import ControllerFor from '../models/local/ControllerFor';
 import { CheckParams } from './interfaces';

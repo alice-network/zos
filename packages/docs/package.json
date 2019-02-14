@@ -1,5 +1,5 @@
 {
-  "name": "zos-docs",
+  "name": "@alice-network/zos-docs",
   "version": "2.2.0",
   "description": "Documentation for the ZeppelinOS smart contract platform",
   "main": "index.js",

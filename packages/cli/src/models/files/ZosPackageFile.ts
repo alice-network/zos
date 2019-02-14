@@ -1,6 +1,6 @@
 import isEqual from 'lodash.isequal';
 import isEmpty from 'lodash.isempty';
-import { Logger, FileSystem as fs } from 'zos-lib';
+import { Logger, FileSystem as fs } from '@alice-network/zos-lib';
 import Dependency from '../dependency/Dependency';
 import { ZOS_VERSION, checkVersion } from './ZosVersion';
 import ZosNetworkFile from './ZosNetworkFile';

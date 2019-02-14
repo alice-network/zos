@@ -1,4 +1,4 @@
-import { Logger } from 'zos-lib';
+import { Logger } from '@alice-network/zos-lib';
 
 export default class CaptureLogs {
   constructor() {

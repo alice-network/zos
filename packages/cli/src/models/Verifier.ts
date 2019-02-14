@@ -2,7 +2,7 @@ import axios from 'axios';
 import cheerio from 'cheerio';
 import querystring from 'querystring';
 
-import { sleep, Logger } from 'zos-lib';
+import { sleep, Logger } from '@alice-network/zos-lib';
 
 const log: Logger = new Logger('Verifier');
 

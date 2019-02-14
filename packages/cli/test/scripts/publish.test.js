@@ -1,7 +1,7 @@
 'use strict'
 require('../setup')
 
-import { App, Package, ImplementationDirectory, Proxy } from 'zos-lib'
+import { App, Package, ImplementationDirectory, Proxy } from '@alice-network/zos-lib'
 
 import publish from '../../src/scripts/publish';
 import push from '../../src/scripts/push';
@@ -86,7 +86,7 @@ contract('publish script', function(accounts) {
       const app = await App.fetch(this.networkFile.appAddress);
       const newImplFromApp = await app.getImplementation(projectName, contractAlias);
       const newImplFromFile = this.networkFile.contract(contractAlias).address;
-      
+
       newImplFromApp.should.eq(newImplFromFile);
       newImplFromApp.should.eq(this.previousContractAddress);
     });

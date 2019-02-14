@@ -1,4 +1,4 @@
-import { Logger, Contract } from 'zos-lib';
+import { Logger, Contract } from '@alice-network/zos-lib';
 
 const log = new Logger('EventsFilter');
 const TIMEOUT_ERROR = 'Event filter promise timed out';

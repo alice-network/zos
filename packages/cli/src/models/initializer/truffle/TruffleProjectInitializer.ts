@@ -1,6 +1,6 @@
 import path from 'path';
 import Truffle from './Truffle';
-import { FileSystem as fs } from 'zos-lib';
+import { FileSystem as fs } from '@alice-network/zos-lib';
 
 const TruffleProjectInitializer = {
 

@@ -1,4 +1,4 @@
-import { ZWeb3, Contracts } from 'zos-lib';
+import { ZWeb3, Contracts } from '@alice-network/zos-lib';
 import Truffle from './truffle/Truffle';
 import Session from '../network/Session';
 

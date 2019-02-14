@@ -1,6 +1,6 @@
 import ControllerFor from '../models/network/ControllerFor';
 import ZosNetworkFile from '../models/files/ZosNetworkFile';
-import { ProxyAdminProject, AppProject } from 'zos-lib';
+import { ProxyAdminProject, AppProject } from '@alice-network/zos-lib';
 
 /**
  * Initializes a zOS application testing and deploying it to the test network,

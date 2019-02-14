@@ -1,7 +1,7 @@
 'use strict'
 require('./setup')
 
-import { Contracts, encodeCall } from 'zos-lib'
+import { Contracts, encodeCall } from '@alice-network/zos-lib'
 import shouldBehaveLikeDonations from './behaviors/Donations.behavior.js'
 
 const DonationsV1 = Contracts.getFromLocal('DonationsV1')

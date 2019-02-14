@@ -1,5 +1,5 @@
 {
-  "name": "zos-lib",
+  "name": "@alice-network/zos-lib",
   "version": "2.2.0",
   "description": "JavaScript library for the ZeppelinOS smart contract platform",
   "main": "./lib/index.js",

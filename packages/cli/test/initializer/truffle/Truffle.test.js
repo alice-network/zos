@@ -1,11 +1,11 @@
 require('../../setup')
 
-import { FileSystem } from 'zos-lib'
+import { FileSystem } from '@alice-network/zos-lib'
 import Truffle from '../../../src/models/initializer/truffle/Truffle'
 
 contract('Truffle', () => {
   const testDir = `${process.cwd()}/test/tmp`
-  
+
   beforeEach('create test dir', function () {
     FileSystem.createDir(testDir)
   })

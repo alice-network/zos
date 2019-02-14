@@ -2,7 +2,7 @@
 
 import every from 'lodash.every';
 import map from 'lodash.map';
-import { Contracts, Contract, Logger, FileSystem as fs, getBuildArtifacts, BuildArtifacts, validate as validateContract, validationPasses} from 'zos-lib';
+import { Contracts, Contract, Logger, FileSystem as fs, getBuildArtifacts, BuildArtifacts, validate as validateContract, validationPasses} from '@alice-network/zos-lib';
 
 import Session from '../network/Session';
 import Dependency from '../dependency/Dependency';

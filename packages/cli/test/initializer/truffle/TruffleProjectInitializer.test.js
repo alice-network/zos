@@ -1,7 +1,7 @@
 'use strict'
 require('../../setup')
 
-import { FileSystem as fs } from 'zos-lib'
+import { FileSystem as fs } from '@alice-network/zos-lib'
 import { cleanupfn } from '../../helpers/cleanup'
 import TruffleProjectInitializer from '../../../src/models/initializer/truffle/TruffleProjectInitializer'
 

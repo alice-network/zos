@@ -1,6 +1,6 @@
 process.env.NODE_ENV = 'test'
 
-import { ZWeb3, Contracts } from 'zos-lib'
+import { ZWeb3, Contracts } from '@alice-network/zos-lib'
 import Dependency from '../src/models/dependency/Dependency'
 import ZosPackageFile from '../src/models/files/ZosPackageFile'
 import ZosNetworkFile from '../src/models/files/ZosNetworkFile'
@@ -12,7 +12,7 @@ setArtifactDefaults()
 
 require('chai')
   .use(require('chai-as-promised'))
-  .use(require('zos-lib').assertions)
+  .use(require('@alice-network/zos-lib').assertions)
   .use(require('sinon-chai'))
   .should()
 

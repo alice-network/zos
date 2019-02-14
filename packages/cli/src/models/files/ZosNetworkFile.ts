@@ -7,7 +7,7 @@ import map from 'lodash.map';
 import filter from 'lodash.filter';
 import find from 'lodash.find';
 
-import { Logger, FileSystem as fs, bytecodeDigest, bodyCode, constructorCode, semanticVersionToString, Contract } from 'zos-lib';
+import { Logger, FileSystem as fs, bytecodeDigest, bodyCode, constructorCode, semanticVersionToString, Contract } from '@alice-network/zos-lib';
 import { fromContractFullName, toContractFullName } from '../../utils/naming';
 import { ZOS_VERSION, checkVersion } from './ZosVersion';
 import ZosPackageFile from './ZosPackageFile.js';

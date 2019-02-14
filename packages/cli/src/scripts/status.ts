@@ -1,5 +1,5 @@
 import forEach from 'lodash.foreach';
-import { Logger } from 'zos-lib';
+import { Logger } from '@alice-network/zos-lib';
 
 import ControllerFor from '../models/network/ControllerFor';
 import ZosNetworkFile from '../models/files/ZosNetworkFile';

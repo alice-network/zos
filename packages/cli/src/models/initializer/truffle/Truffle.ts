@@ -1,7 +1,7 @@
 import pickBy from 'lodash.pickby';
 import pick from 'lodash.pick';
 import { promisify } from 'util';
-import { FileSystem } from 'zos-lib';
+import { FileSystem } from '@alice-network/zos-lib';
 
 const Truffle = {
 

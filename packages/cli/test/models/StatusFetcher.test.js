@@ -1,7 +1,7 @@
 'use strict'
 require('../setup')
 
-import { Contracts, bodyCode, bytecodeDigest, constructorCode, getStorageLayout  } from 'zos-lib'
+import { Contracts, bodyCode, bytecodeDigest, constructorCode, getStorageLayout  } from '@alice-network/zos-lib'
 
 import push from '../../src/scripts/push'
 import link from '../../src/scripts/link'
@@ -21,7 +21,7 @@ contract('StatusFetcher', async function([_, owner, anotherAddress]) {
     beforeEach('initializing network file and status checker', async function () {
       init.call(this, 'test/mocks/packages/package-empty.zos.json');
     })
-  
+
     beforeEach('deploying an app', async function () {
       await push({ network, txParams, networkFile: this.networkFile })
       this.project = await this.checker.setProject()

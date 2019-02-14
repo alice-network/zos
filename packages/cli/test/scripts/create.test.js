@@ -2,7 +2,7 @@
 require('../setup')
 
 import CaptureLogs from '../helpers/captureLogs';
-import { Contracts, Logger } from 'zos-lib';
+import { Contracts, Logger } from '@alice-network/zos-lib';
 
 import add from '../../src/scripts/add';
 import push from '../../src/scripts/push';
@@ -249,7 +249,7 @@ contract('create script', function([_, owner]) {
       });
     });
   }
-  
+
   describe('on unpublished project', function () {
     beforeEach('setup', async function() {
       this.packageFile = new ZosPackageFile('test/mocks/packages/package-empty.zos.json')
@@ -268,5 +268,5 @@ contract('create script', function([_, owner]) {
 
     shouldHandleCreateScript();
   })
-  
+
 });

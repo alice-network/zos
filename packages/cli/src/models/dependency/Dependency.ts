@@ -2,7 +2,7 @@ import fromPairs from 'lodash.frompairs';
 import map from 'lodash.map';
 import flatten from 'lodash.flatten';
 import uniq from 'lodash.uniq';
-import { FileSystem as fs, PackageProject, Contracts, Contract, getSolidityLibNames, Logger } from 'zos-lib';
+import { FileSystem as fs, PackageProject, Contracts, Contract, getSolidityLibNames, Logger } from '@alice-network/zos-lib';
 import semver from 'semver';
 import npm from 'npm-programmatic';
 

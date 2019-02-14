@@ -1,5 +1,5 @@
 import { exec } from 'child_process';
-import { FileSystem, Contracts, Logger } from 'zos-lib';
+import { FileSystem, Contracts, Logger } from '@alice-network/zos-lib';
 
 const log = new Logger('Compiler');
 

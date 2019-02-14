@@ -3,7 +3,7 @@ import { promisify } from 'util';
 import EventsFilter from './EventsFilter';
 import StatusFetcher from './StatusFetcher';
 import StatusComparator from './StatusComparator';
-import { ZWeb3, Logger, AppProject, bytecodeDigest, semanticVersionToString, semanticVersionEqual, replaceSolidityLibAddress, isSolidityLib } from 'zos-lib';
+import { ZWeb3, Logger, AppProject, bytecodeDigest, semanticVersionToString, semanticVersionEqual, replaceSolidityLibAddress, isSolidityLib } from '@alice-network/zos-lib';
 import ZosNetworkFile, {
   ProxyInterface,
   DependencyInterface

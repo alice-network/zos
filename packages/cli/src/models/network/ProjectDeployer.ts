@@ -1,5 +1,5 @@
 import forEach from 'lodash.foreach';
-import { AppProject, PackageProject, ProxyAdminProject, App, Package, ImplementationDirectory } from 'zos-lib';
+import { AppProject, PackageProject, ProxyAdminProject, App, Package, ImplementationDirectory } from '@alice-network/zos-lib';
 
 import NetworkController from './NetworkController';
 import ZosPackageFile from '../files/ZosPackageFile';

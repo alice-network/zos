@@ -1,7 +1,7 @@
 'use strict'
 require('../setup')
 
-import { ZWeb3, Contracts, App, Package } from 'zos-lib'
+import { ZWeb3, Contracts, App, Package } from '@alice-network/zos-lib'
 
 import sinon from 'sinon'
 import push from '../../src/scripts/push';
@@ -17,7 +17,7 @@ const should = require('chai').should();
 
 const ImplV1 = Contracts.getFromLocal('ImplV1');
 const WithLibraryImplV1 = Contracts.getFromLocal('WithLibraryImplV1');
-const ImplementationDirectory = Contracts.getFromNodeModules('zos-lib', 'ImplementationDirectory');
+const ImplementationDirectory = Contracts.getFromNodeModules('@alice-network/zos-lib', 'ImplementationDirectory');
 
 contract('push script', function([_, owner]) {
   const network = 'test';
@@ -145,7 +145,7 @@ contract('push script', function([_, owner]) {
       modifyStorageInfo.call(this, 'Impl');
       await push({ force: true, networkFile: this.networkFile, network, txParams });
       this.networkFile.contract('Impl').address.should.not.eq(this.previousAddress);
-    });    
+    });
   }
 
   const shouldValidateContracts = function () {
@@ -161,15 +161,15 @@ contract('push script', function([_, owner]) {
       it('should refuse to push a contract with validation error', async function () {
         add({ contractsData: ['WithConstructor'], packageFile: this.networkFile.packageFile });
         await push({ networkFile: this.networkFile, network, txParams }).should.be.rejectedWith(/One or more contracts have validation errors/i)
-        
+
         this.logs.errors.should.have.lengthOf(1);
         this.logs.errors[0].should.match(/constructor/i);
       })
-      
+
       it('should push a contract with validation error if forced', async function () {
         add({ contractsData: ['WithConstructor'], packageFile: this.networkFile.packageFile });
         await push({ networkFile: this.networkFile, network, txParams, force: true });
-        
+
         this.logs.errors.should.have.lengthOf(1);
         this.logs.errors[0].should.match(/constructor/i);
 
@@ -181,11 +181,11 @@ contract('push script', function([_, owner]) {
         add({ contractsData: ['WithConstructor'], packageFile: this.networkFile.packageFile });
         await push({ networkFile: this.networkFile, network, txParams, force: true });
         const previousAddress = this.networkFile.contract('WithConstructor').address;
-        
+
         this.logs.clear();
         modifyBytecode.call(this, 'WithConstructor');
         await push({ networkFile: this.networkFile, network, txParams});
-        
+
         this.logs.errors.should.have.lengthOf(0);
         const contract = this.networkFile.contract('WithConstructor');
         contract.address.should.not.eq(previousAddress);
@@ -199,7 +199,7 @@ contract('push script', function([_, owner]) {
         this.logs.clear();
         modifyBytecode.call(this, 'Impl');
         await push({ networkFile: this.networkFile, network, txParams});
-        
+
         this.logs.errors.should.have.lengthOf(0);
         this.networkFile.contract('Impl').address.should.not.eq(previousAddress);
       })
@@ -280,7 +280,7 @@ contract('push script', function([_, owner]) {
   const shouldUpdateDependency = function () {
     describe('updating dependency', function () {
       const newVersion = '1.2.0';
-      
+
       beforeEach('deploying new dependency version', async function () {
         const mockStdlibPackage = new ZosPackageFile('test/mocks/mock-stdlib/zos.json');
         mockStdlibPackage.version = newVersion;
@@ -288,10 +288,10 @@ contract('push script', function([_, owner]) {
 
         await this.dependencyPackage.newVersion(newVersion)
         this.dependencyGetNetworkFileStub.callsFake(() => ({ packageAddress: this.dependencyPackage.address, version: newVersion }));
-        
+
         this.networkFile.packageFile.setDependency('mock-stdlib', newVersion);
       })
-      
+
       beforeEach('running new push', async function () {
         await push({ networkFile: this.networkFile, network, txParams });
       })
@@ -336,7 +336,7 @@ contract('push script', function([_, owner]) {
     })
 
     afterEach('unstub dependency network file stub', function () {
-      sinon.restore()      
+      sinon.restore()
     })
   };
 

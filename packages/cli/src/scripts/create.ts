@@ -2,7 +2,7 @@ import stdout from '../utils/stdout';
 import ControllerFor from '../models/network/ControllerFor';
 import ScriptError from '../models/errors/ScriptError';
 import { CreateParams } from './interfaces';
-import { Contract } from 'zos-lib';
+import { Contract } from '@alice-network/zos-lib';
 
 export default async function createProxy({ packageName, contractAlias, initMethod, initArgs, network, txParams = {}, force = false, networkFile }: CreateParams): Promise<Contract | never> {
   if (!contractAlias) throw Error('A contract alias must be provided to create a new proxy.');

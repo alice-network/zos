@@ -1,5 +1,5 @@
 import { Command } from 'commander';
-import { Logger } from 'zos-lib';
+import { Logger } from '@alice-network/zos-lib';
 import ScriptError from './ScriptError';
 
 const log = new Logger('Error');

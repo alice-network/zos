@@ -2,7 +2,7 @@ import omitBy from 'lodash.omitby';
 import isEmpty from 'lodash.isempty';
 import pick from 'lodash.pick';
 import compact from 'lodash.compact';
-import { FileSystem as fs, Logger } from 'zos-lib';
+import { FileSystem as fs, Logger } from '@alice-network/zos-lib';
 
 const log: Logger = new Logger('Session');
 

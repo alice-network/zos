@@ -8,7 +8,7 @@ import {
   StorageLayoutInfo,
   Operation,
   Contract
-} from 'zos-lib';
+} from '@alice-network/zos-lib';
 import { ContractInterface } from '../models/files/ZosNetworkFile';
 
 const DOCS_HOME = 'https://docs.zeppelinos.org/docs';
