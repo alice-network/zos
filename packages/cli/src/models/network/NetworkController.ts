@@ -445,7 +445,7 @@ export default class NetworkController {
       this._tryRegisterProxyAdmin(proxyAdmin.address);
 
       await allPromisesOrError(map(proxies, async (proxy) => {
-        const proxyInstance = await Proxy.at(proxy.address);
+        const proxyInstance = await Proxy.at(proxy.address, { from: proxyAdmin.address });
         const currentAdmin = await proxyInstance.admin();
         if (currentAdmin !== proxyAdmin.address) {
           if (this.appAddress) {
@@ -491,7 +491,7 @@ export default class NetworkController {
     await this._setSolidityLibs(contract);
     this.checkInitialization(contract, initMethod, initArgs);
     const proxyInstance = await this.project.createProxy(contract, { packageName, contractName: contractAlias, initMethod, initArgs });
-    const implementationAddress = await Proxy.at(proxyInstance).implementation();
+    const implementationAddress = await Proxy.at(proxyInstance, { from: this.project.proxyAdmin.address }).implementation();
     const packageVersion = packageName === this.packageFile.name ? this.currentVersion : (await this.project.getDependencyVersion(packageName));
     await this._tryRegisterProxyAdmin();
     await this._updateTruffleDeployedInformation(contractAlias, proxyInstance);
@@ -589,7 +589,7 @@ export default class NetworkController {
       const name = { packageName: proxy.package, contractName: proxy.contract };
       const contract = this.localController.getContractClass(proxy.package, proxy.contract);
       await this._setSolidityLibs(contract);
-      const currentImplementation = await Proxy.at(proxy.address).implementation();
+      const currentImplementation = await Proxy.at(proxy.address, { from: this.project.proxyAdmin.address }).implementation();
       const contractImplementation = await this.project.getImplementation(name);
       const packageVersion = proxy.package === this.packageFile.name ? this.currentVersion : (await this.project.getDependencyVersion(proxy.package));
 

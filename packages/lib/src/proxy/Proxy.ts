@@ -1,6 +1,6 @@
 import ZWeb3 from '../artifacts/ZWeb3';
 import Contracts from '../artifacts/Contracts';
-import { toAddress, uint256ToAddress } from '../utils/Addresses';
+import { toAddress } from '../utils/Addresses';
 import Transactions from '../utils/Transactions';
 import Contract from '../artifacts/Contract';
 
@@ -41,13 +41,11 @@ export default class Proxy {
   }
 
   public async implementation(): Promise<string> {
-    const position = ZWeb3.sha3('org.zeppelinos.proxy.implementation');
-    return uint256ToAddress(await this.getStorageAt(position));
+    return await this.contract.methods.implementation().call({ from: this.txParams.from });
   }
 
   public async admin(): Promise<string> {
-    const position = ZWeb3.sha3('org.zeppelinos.proxy.admin');
-    return uint256ToAddress(await this.getStorageAt(position));
+    return await this.contract.methods.admin().call({ from: this.txParams.from });
   }
 
   public async getStorageAt(position: string): Promise<string> {
