@@ -1,6 +1,6 @@
 {
   "name": "@alice-network/zos-lib-simple-example",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "private": true,
   "main": "index.js",
   "scripts": {
@@ -9,7 +9,7 @@
   },
   "license": "ISC",
   "dependencies": {
-    "truffle": "^4.1.14",
-    "@alice-network/zos-lib": "^2.2.0"
+    "@alice-network/zos-lib": "^2.2.1",
+    "truffle": "^4.1.14"
   }
 }

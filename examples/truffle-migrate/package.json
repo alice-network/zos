@@ -1,6 +1,6 @@
 {
   "name": "@alice-network/example-truffle-migrate",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "description": "Sample project for using ZeppelinOS within truffle migrations",
   "main": "index.js",
   "private": true,
@@ -11,8 +11,8 @@
   "author": "santiago@zeppelin.solutions",
   "license": "MIT",
   "devDependencies": {
-    "truffle": "^4.1.13",
-    "@alice-network/zos": "^2.2.0",
-    "@alice-network/zos-lib": "^2.2.0"
+    "@alice-network/zos": "^2.2.1",
+    "@alice-network/zos-lib": "^2.2.1",
+    "truffle": "^4.1.13"
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "@alice-network/zos",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "description": "Command-line interface for the ZeppelinOS smart contract platform",
   "main": "./lib/index.js",
   "private": false,
@@ -38,6 +38,7 @@
   },
   "homepage": "https://github.com/zeppelinos/zos/tree/master/packages/cli#readme",
   "dependencies": {
+    "@alice-network/zos-lib": "^2.2.1",
     "@types/npm": "^2.0.29",
     "@types/semver": "^5.5.0",
     "@types/web3": "^1.0.14",
@@ -78,8 +79,7 @@
     "semver": "^5.5.0",
     "truffle-config": "1.1.2",
     "web3": "1.0.0-beta.37",
-    "web3-provider-engine": "14.0.6",
-    "@alice-network/zos-lib": "^2.2.0"
+    "web3-provider-engine": "14.0.6"
   },
   "devDependencies": {
     "@types/lodash": "^4.14.119",
